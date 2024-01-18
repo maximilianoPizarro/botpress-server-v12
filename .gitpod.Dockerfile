@@ -8,11 +8,12 @@ FROM ubuntu:latest
 #   and use `sudo` to install any other tools in a live workspace.
 RUN apt-get update && apt-get install -yq \
     git \
+    curl \
     git-lfs \
     sudo \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
 RUN sudo apt-get install -y nodejs
 
