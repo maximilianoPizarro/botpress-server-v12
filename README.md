@@ -44,6 +44,8 @@ There are a few ways to get started with Botpress v12:
 - [Code Examples](https://github.com/botpress/v12/tree/master/examples)
 - [Video Tutorials](https://www.youtube.com/c/botpress)
 
+[![Open in Gitpod from my fork gitpod.io/maximilianoPizarro/botpress-server-v12](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://gitpod.io/maximilianoPizarro/botpress-server-v12)
+
 ## Community
 
 - [Discord](https://discord.gg/botpress) - Get community support and find answers to your questions
