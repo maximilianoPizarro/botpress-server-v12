@@ -11,7 +11,7 @@ ports:
       onOpen: ignore
       visibility: public 
     - name: botpress-server-postgres
-      port: 5436
+      port: 5435
       onOpen: ignore
       visibility: public          
     - name: botpress-server-duck
