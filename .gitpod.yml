@@ -4,9 +4,17 @@ tasks:
 ports:
     - name: botpress-server
       port: 3000
-      onOpen: open-browser
+      onOpen: open-preview
       visibility: public 
     - name: botpress-server-lang
       port: 3100
-      onOpen: open-preview
+      onOpen: ignore
       visibility: public 
+    - name: botpress-server-postgres
+      port: 5436
+      onOpen: ignore
+      visibility: public          
+    - name: botpress-server-duck
+      port: 8000
+      onOpen: ignore
+      visibility: public       
