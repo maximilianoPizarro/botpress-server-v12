@@ -1,4 +1,4 @@
-[![Open in Gitpod from my fork gitpod.io/maximilianoPizarro/botpress-server-v12](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://gitpod.io/maximilianoPizarro/botpress-server-v12)
+[![Open in Gitpod from my fork gitpod.io/maximilianoPizarro/botpress-server-v12](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/maximilianoPizarro/botpress-server-v12)
 
 # [Botpress](https://botpress.com/?utm_source=github&utm_medium=organic&utm_campaign=botpress_repo&utm_term=readme) — The building blocks for building chatbots
 
