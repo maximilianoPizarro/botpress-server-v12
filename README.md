@@ -1,3 +1,5 @@
+[![Open in Gitpod from my fork gitpod.io/maximilianoPizarro/botpress-server-v12](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://gitpod.io/maximilianoPizarro/botpress-server-v12)
+
 # [Botpress](https://botpress.com/?utm_source=github&utm_medium=organic&utm_campaign=botpress_repo&utm_term=readme) — The building blocks for building chatbots
 
 **IMPORTANT**: With the launch of Botpress Cloud, the documentation for Botpress v12 can now be found [here](https://v12.botpress.com/).
@@ -44,7 +46,7 @@ There are a few ways to get started with Botpress v12:
 - [Code Examples](https://github.com/botpress/v12/tree/master/examples)
 - [Video Tutorials](https://www.youtube.com/c/botpress)
 
-[![Open in Gitpod from my fork gitpod.io/maximilianoPizarro/botpress-server-v12](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://gitpod.io/maximilianoPizarro/botpress-server-v12)
+
 
 ## Community
 
