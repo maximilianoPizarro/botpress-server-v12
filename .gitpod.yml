@@ -1,4 +1,5 @@
-image: node:12-alpine
+image:
+  file: .gitpod.Dockerfile
 tasks:
   - init: yarn && yarn build
     command: yarn run start
