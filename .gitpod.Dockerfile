@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM node:12-alpine
 
 # Install:
 # - git (and git-lfs), for git operations (to e.g. push your work).
@@ -8,16 +8,9 @@ FROM ubuntu:latest
 #   and use `sudo` to install any other tools in a live workspace.
 RUN apt-get update && apt-get install -yq \
     git \
-    curl \
     git-lfs \
     sudo \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
-
-RUN curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-
-RUN sudo apt-get install -y nodejs
-
-RUN sudo npm install -g npm@latest
 
 # Create the gitpod user. UID must be 33333.
 RUN useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod
