@@ -1,5 +1,12 @@
 tasks:
-  - init: docker compose -f examples/docker-compose/docker-compose-community.yaml up 
-    command: yarn run start
-    openMode: split-right
-    name: Builds & run Botpress
+  - init: echo "Starter Botpress Server Docker Compose Community" 
+    command: docker compose -f examples/docker-compose/docker-compose-community.yaml up 
+ports:
+    - name: botpress-server
+      port: 3000
+      onOpen: open-browser
+      visibility: public 
+    - name: botpress-server-lang
+      port: 3100
+      onOpen: open-preview
+      visibility: public 
