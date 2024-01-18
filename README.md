@@ -1,6 +1,6 @@
-<p align="left">
 [![Open in Gitpod from my fork gitpod.io/maximilianoPizarro/botpress-server-v12](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/maximilianoPizarro/botpress-server-v12)
 
+<p align="left">
   <img src="https://github.com/maximilianoPizarro/botpress-server-v12/blob/master/examples/image/Captura.PNG?raw=true" width="684" title="Run On GitPod">
 </p>  
 
