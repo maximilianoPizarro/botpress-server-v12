@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ckan
+  annotations:
+    image.openshift.io/triggers: |-
+      [
+        {
+          "from": {
+            "kind": "ImageStreamTag",
+            "name": "botpress-server:latest"
+          },
+          "fieldPath": "spec.template.spec.containers[0].image"
+        }
+      ]
+spec:
+  template:
+    spec:
+      volumes:
+        - name: bp-storage
+          persistentVolumeClaim:
+            claimName: bp-storage    
+      containers:
+      - name: botpress-server
+        image: image-registry.openshift-image-registry.svc:5000/mpizarro-dev/botpress-server:latest
+        env:
+          - name: BP_MODULE_NLU_DUCKLINGURL
+            value: 'http://localhost:8000'
+          - name: EXTERNAL_URL
+            value: >-
+              https://botpress-server-mpizarro-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com
+          - name: BP_PRODUCTION
+            value: 'true'
+      volumeMounts:
+        - name: bp-storage
+          mountPath: /botpress/data
+        - name: bp-storage
+          mountPath: /botpress/pre-trained
+        - name: bp-storage
+          mountPath: /botpress/stop-words
+        - name: bp-storage
+          mountPath: /botpress/log            

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: botpress-server
+    app.kubernetes.io/component: botpress-server
+    app.kubernetes.io/instance: botpress-server
+    app.kubernetes.io/name: botpress-server
+    app.kubernetes.io/part-of: botpress-server
+    app.openshift.io/runtime: nodejs
+    app.openshift.io/runtime-version: '12.18'
+  name: botpress-server
+spec:
+  ports:
+    - name: 3000-tcp
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
+  selector:
+    app: botpress-server
+    deployment: botpress-server
