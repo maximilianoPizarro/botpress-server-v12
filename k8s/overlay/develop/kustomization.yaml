@@ -10,4 +10,4 @@ resources:
 #namespace: mpizarro-dev
 
 patches:
-- ./deployment-patches.yaml 
+- path: ./deployment-patches.yaml 
