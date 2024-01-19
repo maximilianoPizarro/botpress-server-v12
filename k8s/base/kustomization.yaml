@@ -4,7 +4,6 @@ kind: Kustomization
 
 resources:
 - ./pvc.yaml
-- ./pipeline.yaml
 - ./deployment.yaml
 - ./service.yaml
 - ./imagestream.yaml
