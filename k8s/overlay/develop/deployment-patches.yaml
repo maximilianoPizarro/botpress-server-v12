@@ -31,12 +31,12 @@ spec:
               https://botpress-server-mpizarro-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com
           - name: BP_PRODUCTION
             value: 'true'
-      volumeMounts:
-        - name: bp-storage
-          mountPath: /botpress/data
-        - name: bp-storage
-          mountPath: /botpress/pre-trained
-        - name: bp-storage
-          mountPath: /botpress/stop-words
-        - name: bp-storage
-          mountPath: /botpress/log            
+        volumeMounts:
+          - name: bp-storage
+            mountPath: /botpress/data
+          - name: bp-storage
+            mountPath: /botpress/pre-trained
+          - name: bp-storage
+            mountPath: /botpress/stop-words
+          - name: bp-storage
+            mountPath: /botpress/log            
