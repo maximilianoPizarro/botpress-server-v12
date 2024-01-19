@@ -1,4 +1,4 @@
-# Botpress Server Community on Red Hat OpenShift Dedicated
+# Botpress Server Community deploy Red Hat OpenShift Dedicated
 <p align="left">
 <img src="https://img.shields.io/badge/redhat-CC0000?style=for-the-badge&logo=redhat&logoColor=white" alt="Redhat">
 <img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white" alt="kubernetes">
