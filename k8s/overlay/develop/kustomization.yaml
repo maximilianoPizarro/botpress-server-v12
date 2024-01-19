@@ -7,8 +7,7 @@ bases:
 
 resources:
 - ./route.yaml
+- ./deployment-patches.yaml
 
 #namespace: mpizarro-dev
 
-patches:
-- ./deployment-patches.yaml
