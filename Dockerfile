@@ -1,2 +1,8 @@
 FROM botpress/server:latest
-CMD ["./bp", "&" ,"./duckling"]
+USER root
+ENV NODE_ENV=production
+ENV BP_CONFIG_HTTPSERVER_HOST=0.0.0.0
+ENV LANG=C.UTF-8
+RUN chown 1001:0 $BP_WORKDIR && chgrp -R 0 $BP_WORKDIR && chmod -R g=u $BP_WORKDIR
+EXPOSE 3000 3100 4000 8000
+USER 1001
