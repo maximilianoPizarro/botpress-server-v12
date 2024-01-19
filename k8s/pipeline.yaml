@@ -40,6 +40,9 @@ spec:
     - default: .
       name: PATH_CONTEXT
       type: string
+    - default: botpress-server-mpizarro-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com
+      name: EXTERNAL_URL
+      type: string
   tasks:
     - name: fetch-repository
       params:
@@ -70,7 +73,7 @@ spec:
         - name: CONTEXT
           value: $(params.PATH_CONTEXT)
       runAfter:
-        - manifest
+        - oc-apply-manifest
       taskRef:
         kind: ClusterTask
         name: buildah
@@ -86,19 +89,70 @@ spec:
       taskRef:
         kind: ClusterTask
         name: openshift-client
-    - name: manifest
+    - name: oc-apply-manifest
       params:
         - name: SCRIPT
-          value: oc apply -k k8s/overlay/develop
+          value: >-
+            oc process k8s/overlay/develop/deployment-patches.yaml -p
+            EXTERNAL_URL=$(params.EXTERNAL_URL)
+
+
+            oc apply -k k8s/overlay/develop 
         - name: VERSION
           value: latest
       runAfter:
-        - fetch-repository
+        - yq-patches
       taskRef:
         kind: ClusterTask
         name: openshift-client
       workspaces:
         - name: manifest-dir
+          workspace: workspace
+    - name: yq-patches
+      params:
+        - name: SCRIPT
+          value: >+
+            echo "patch external url"
+
+
+            yq e -i '.spec.template.spec.containers[0].env.[1].value =
+            "https://$(params.EXTERNAL_URL)"'
+            k8s/overlay/develop/deployment-patches.yaml
+
+
+            echo "patch image"
+
+
+            yq e -i '.spec.template.spec.containers[0].image =
+            "$(params.IMAGE_NAME)"' k8s/overlay/develop/deployment-patches.yaml
+
+
+            cat k8s/overlay/develop/deployment-patches.yaml
+
+
+            echo "patch host"
+
+
+            yq e -i '.spec.template.spec.containers[0].image =
+            "$(params.EXTERNAL_URL)"' k8s/overlay/develop/route.yaml
+
+
+            cat k8s/overlay/develop/route.yaml
+
+        - name: image
+          value: >-
+            docker.io/mikefarah/yq:4.27.5@sha256:2be3626ed633fbe1fc33ee9343a1256a6be53334412b2251b9a859f8c145bb53
+        - name: files
+          value: []
+        - name: expression
+          value: ''
+      runAfter:
+        - fetch-repository
+      taskRef:
+        kind: Task
+        name: yq
+      workspaces:
+        - name: source
           workspace: workspace
   workspaces:
     - name: workspace
