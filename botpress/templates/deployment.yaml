@@ -53,7 +53,7 @@ spec:
               mountPath: /botpress/log                         
           ports:
             - name: http
-              containerPort: 3000
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           livenessProbe:
             httpGet:

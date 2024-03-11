@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: botpress/server
+  repository: quay.io/maximilianopizarro/botpress-server-v12 # botpress/server is oficial image
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
@@ -58,6 +58,10 @@ env:
 service:
   type: ClusterIP
   port: 3000
+
+route:
+  enabled: true  
+  host: botpress-server-maximilianopizarro5-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com
 
 ingress:
   enabled: false
